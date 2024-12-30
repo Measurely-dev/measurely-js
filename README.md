@@ -1,4 +1,4 @@
-# Measurely.js
+# Measurely-js
 
 Measurely.js is a lightweight library for interacting with the Measurely API, enabling developers to manage and track custom metrics programmatically.
 

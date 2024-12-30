@@ -1,6 +1,6 @@
 {
   "name": "measurely-js",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A client library for interacting with the Measurely API to manage and track custom metrics easily.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -25,12 +25,12 @@
   ],
   "authors": [
     {
-      "name": "Author One",
-      "email": "author1@example.com"
+      "name": "YasTheGoat",
+      "url": "https://github.com/YasTheGoat"
     },
     {
-      "name": "Author Two",
-      "email": "author2@example.com"
+      "name": "afz",
+      "url": "https://github.com/zxk-afz"
     }
   ],
   "license": "MIT",

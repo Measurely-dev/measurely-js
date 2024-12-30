@@ -11,14 +11,14 @@ type CaptureResult = {
 
 export default class Measurely {
   // Holds the API key used for authentication with the Measurely API.
-  private static API_KEY = "";
+  private static API_KEY: string = "";
 
   /**
    * Initializes the Measurely library with an API key.
    * @param NEW_API_KEY - The API key provided by Measurely.
    */
   static init(NEW_API_KEY: string) {
-    this.API_KEY = NEW_API_KEY;
+    Measurely.API_KEY = NEW_API_KEY;
   }
 
   /**
@@ -32,7 +32,7 @@ export default class Measurely {
     payload: CapturePayload,
   ): Promise<CaptureResult> {
     // Ensure the API key is set before making the API call.
-    if (this.API_KEY === "") {
+    if (Measurely.API_KEY === "") {
       return {
         success: false,
         message: "Missing API KEY, please call the init function",
@@ -45,7 +45,7 @@ export default class Measurely {
       {
         method: "POST",
         headers: {
-          Authorization: `Bearer ${this.API_KEY}`, // Adds the API key for authentication.
+          Authorization: `Bearer ${Measurely.API_KEY}`, // Adds the API key for authentication.
           "Content-Type": "application/json", // Specifies JSON as the content type.
         },
         body: JSON.stringify(payload), // Converts the payload to a JSON string.

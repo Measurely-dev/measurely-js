@@ -1,1 +1,3 @@
-export * from "./measurely";
+import Measurely from "./measurely";
+
+export default Measurely;

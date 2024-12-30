@@ -23,10 +23,10 @@ yarn add measurely-js
 Before using any methods, initialize the library with your Measurely API key:
 
 ```javascript
-import measurely from "measurely-js";
+import Measurely from "measurely-js";
 
 // Initialize the API key
-measurely.init("your-api-key-here");
+Measurely.init("your-api-key-here");
 ```
 
 ### Capture Metrics
@@ -39,7 +39,7 @@ const payload = {
   value: 42, // Replace with the value you want to send
 };
 
-measurely.capture(metricIdentifier, payload);}
+Measurely.capture(metricIdentifier, payload);}
 
 ```
 
@@ -57,15 +57,13 @@ type CaptureResult = {
 ### Example
 
 ```javascript
-import measurely from "measurely-js";
+import Measurely from "measurely-js";
 
 // Initialize the API key
-measurely.init("your-api-key-here");
+Measurely.init("your-api-key-here");
 
 // Send a metric
-measurely.capture("metric-identifier", { value: 10 });
-
-sendMetric();
+Measurely.capture("metric-identifier", { value: 10 });
 ```
 
 ## API Reference

@@ -9,7 +9,7 @@ type CaptureResult = {
   message: string; // Contains the response message or error information.
 };
 
-export default class measurely {
+export default class Measurely {
   // Holds the API key used for authentication with the Measurely API.
   private static API_KEY = "";
 

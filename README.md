@@ -37,9 +37,10 @@ Use the `capture` method to send metric data to the Measurely API:
 const metricIdentifier = "metric-identifier"; // Replace with your metric ID or metric name
 const payload = {
   value: 42, // Replace with the value you want to send
-  filters: { // Optional filters to categorize the metric
-    "environment": "production",
-    "region": "us-east-1",
+  filters: {
+    // Optional filters to categorize the metric
+    environment: "production",
+    region: "us-east-1",
   },
 };
 
@@ -133,10 +134,8 @@ Check out the example project in the repository for a complete implementation.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request to improve the library.
+Contributions are welcome! Please open an issue or submit a pull request to improve the [library](https://github.com/measurely-dev/measurely-js.git).
 
 ## License
 
 This library is licensed under the MIT License.
-
-

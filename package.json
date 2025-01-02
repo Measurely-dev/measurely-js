@@ -1,6 +1,6 @@
 {
   "name": "measurely-js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A client library for interacting with the Measurely API to manage and track custom metrics easily.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

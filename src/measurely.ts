@@ -2,7 +2,7 @@
 // The payload includes a numeric value and optional filters for categorization.
 type CapturePayload = {
   value: number; // The value of the metric to be recorded.
-  filters: {
+  filters?: {
     [category: string]: string; // Key-value pairs to categorize the metric event.
   };
 };
@@ -68,4 +68,3 @@ export default class Measurely {
     };
   }
 }
-

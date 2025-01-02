@@ -1,6 +1,6 @@
 # Measurely-js
 
-Measurely-js is a lightweight library for interacting with the Measurely API, enabling developers to manage and track custom metrics programmatically using Javascript or Typescript.
+Measurely-js is a lightweight library for interacting with the Measurely API, enabling developers to manage and track custom metrics programmatically using JavaScript or TypeScript.
 
 ## Installation
 
@@ -34,13 +34,22 @@ Measurely.init("your-api-key-here");
 Use the `capture` method to send metric data to the Measurely API:
 
 ```javascript
-const metricIdentifier = "metric-identifier"; // Replace with your metric id or metric name
+const metricIdentifier = "metric-identifier"; // Replace with your metric ID or metric name
 const payload = {
   value: 42, // Replace with the value you want to send
+  filters: { // Optional filters to categorize the metric
+    "environment": "production",
+    "region": "us-east-1",
+  },
 };
 
-Measurely.capture(metricIdentifier, payload);}
-
+Measurely.capture(metricIdentifier, payload).then((result) => {
+  if (result.success) {
+    console.log("Metric captured successfully:", result.message);
+  } else {
+    console.error("Failed to capture metric:", result.message);
+  }
+});
 ```
 
 ### Response Format
@@ -63,7 +72,18 @@ import Measurely from "measurely-js";
 Measurely.init("your-api-key-here");
 
 // Send a metric
-Measurely.capture("metric-identifier", { value: 10 });
+Measurely.capture("metric-identifier", {
+  value: 10,
+  filters: {
+    environment: "staging",
+  },
+}).then((result) => {
+  if (result.success) {
+    console.log("Metric captured successfully:", result.message);
+  } else {
+    console.error("Failed to capture metric:", result.message);
+  }
+});
 ```
 
 ## API Reference
@@ -92,6 +112,9 @@ Sends a metric payload to the Measurely API.
 ```typescript
 type CapturePayload = {
   value: number; // The metric value to send
+  filters: {
+    [category: string]: string; // Optional key-value pairs to categorize the metric
+  };
 };
 ```
 
@@ -115,3 +138,5 @@ Contributions are welcome! Please open an issue or submit a pull request to impr
 ## License
 
 This library is licensed under the MIT License.
+
+
